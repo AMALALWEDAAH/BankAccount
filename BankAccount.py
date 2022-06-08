@@ -7,8 +7,8 @@ class BankAccount:
 
     def deposit(self, amount):
         # your code here
-            self.balance += amount
-            return self
+        self.balance += amount
+        return self
 
     def withdraw(self, amount):
         # your code here
@@ -17,7 +17,7 @@ class BankAccount:
 
     def display_account_info(self):
         # your code here
-        print(f"Name:{self.name}\nAccount Balance:${self.account_balance}\n")
+        print(f"Account Balance:${self.account_balance}\n")
         return self
 
     def yield_interest(self):
@@ -27,15 +27,13 @@ class BankAccount:
         return self
 
 
-nora = User('nora', 1000, 1000)
-Sara = User('Sara', 1000, 3000)
+nora = BankAccount( 1000, 1000)
+Sara = BankAccount( 1000, 3000)
 
 print('User:Sara')
-Sara.make_deposit(400).make_deposit(20).make_deposit(
-    10).make_withdrawal(700).yield_interest()
-print(Sara.display_user_balance())
+print(Sara.deposit(400).deposit(20).deposit(10).withdraw(700).yield_interest().balance)
+
 
 print('User:nora')
-nora.make_deposit(400).make_deposit(
-    20).make_withdrawal(400).make_withdrawal(80).make_withdrawal(200).make_withdrawal(40).yield_interest()
-print(lama.display_user_balance())
+print(nora.deposit(400).deposit(20).withdraw(400).withdraw(80).withdraw(200).withdraw(40).yield_interest().balance)
+
